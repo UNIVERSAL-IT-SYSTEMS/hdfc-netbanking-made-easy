@@ -1,0 +1,14 @@
+{
+   "manifest_version": 2,
+   "name": "HDFC - NetBanking Made Easy",
+   "version": "0.9",
+   "content_scripts": [ {
+      "matches": [ "https://netbanking.hdfcbank.com/netbanking/entry" ],
+      "js": [ "automate.js" ],
+      "all_frames": true
+   } ],
+   "description": "Various automations to make HDFC netbanking easy",
+   "icons": {
+      "128": "hdfc_logo.png"
+   }
+}
