@@ -18,7 +18,8 @@ var inject = '(' + function() {
     var dropdowns = document.getElementsByTagName('select');
     console.log('found '+dropdowns.length+' dropdowns');
     for (var i in dropdowns) {
-        var options = dropdowns[i].getElementsByTagName('option');
+        var dropdown = dropdowns[i];
+        var options = dropdown.getElementsByTagName('option');
         var index;
         if (options.length == 0) {
             continue;
@@ -31,9 +32,9 @@ var inject = '(' + function() {
         }
         var event = document.createEvent("HTMLEvents");
         event.initEvent("change", true, true);
-        dropdowns[i].selectedIndex = index;
-        dropdowns[i].dispatchEvent(event);
-        console.log('setting '+dropdowns[i].getAttribute('name')+' to '+options[index].text);
+        dropdown.selectedIndex = index;
+        dropdown.dispatchEvent(event);
+        console.log('setting '+dropdown.getAttribute('name')+' to '+options[index].text);
     }
 } + ')();';
 
